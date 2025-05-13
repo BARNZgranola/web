@@ -1,0 +1,272 @@
+/* Custom styles for BARNZ Granola website */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Saxony';
+    src: url('_fonts/SaxonySerial-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Saxony';
+    src: url('_fonts/SaxonySerial-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Saxony';
+    src: url('_fonts/SaxonySerial-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Saxony', sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Saxony', sans-serif;
+}
+
+h2 { font-weight: 500; }
+h3 { font-weight: bold; }
+
+p, span, input, textarea, button, a {
+    font-family: 'Saxony', sans-serif;
+    font-weight: normal;
+}
+
+/* WhatsApp Button Animation */
+.whatsapp-button {
+    animation: softPump 2s ease-in-out infinite;
+}
+
+@keyframes softPump {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.whatsapp-button img {
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover img {
+    transform: scale(1.1);
+}
+
+/* Mobile Menu */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+#mobile-menu a {
+    color: white !important;
+}
+
+#mobile-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Language Switcher */
+.language-btn.active {
+    background-color: #ffffff;
+    color: #92400e;
+}
+
+/* Shop Locations Slider */
+.shop-slider {
+    position: relative;
+    padding: 0 30px;
+}
+
+.shop-locations-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.shop-locations-container::-webkit-scrollbar {
+    display: none;
+}
+
+.shop-location {
+    transition: all 0.3s ease;
+}
+
+.shop-location:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;
+}
+
+/* Ingredients Slider */
+.ingredients-slider-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 12px 0;
+    position: relative;
+}
+
+.ingredients-slider {
+    display: flex;
+    animation: marquee 45s linear infinite !important;
+    will-change: transform;
+    width: max-content;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% / 2)); }
+}
+
+.ingredients-slider:hover {
+    animation-play-state: paused;
+}
+
+.ingredient-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    margin: 0 8px;
+    height: 100%;
+    flex-shrink: 0;
+    width: 240px;
+}
+
+.ingredient-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+}
+
+/* Product Image Transitions */
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.product-image-container .product-image:first-child {
+    opacity: 1;
+}
+
+.product-image-container:hover .product-image:first-child {
+    opacity: 0;
+}
+
+.product-image-container:hover .product-image:nth-child(1) {
+    animation: fadeInOut 6s infinite 4s;
+}
+
+.product-image-container:hover .product-image:nth-child(2) {
+    animation: fadeInOut 6s infinite;
+}
+
+.product-image-container:hover .product-image:nth-child(3) {
+    animation: fadeInOut 6s infinite 2s;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    30% { opacity: 1; }
+    35% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Map Button Styling */
+.map-btn {
+    color: #d2713e !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-right: 16px;
+}
+
+.map-btn:hover {
+    color: #e38b4e !important;
+    transform: translateX(3px);
+}
+
+.map-btn:after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.map-btn:hover:after {
+    opacity: 1;
+    right: -3px;
+}
+
+/* Background Colors */
+body.font-sans.bg-green-50 {
+    background-color: #f4b06d !important;
+}
+
+header.bg-green-100 {
+    background-color: #d2713e !important;
+}
+
+#mobile-menu .bg-green-100 {
+    background-color: #d2713e !important;
+}
+
+section#ingredients.bg-green-100 {
+    background-color: #e39d58 !important;
+}
+
+section#contact.bg-green-50 {
+    background-color: #e39d58 !important;
+}
+
+footer.bg-green-800 {
+    background-color: #d2713e !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .ingredient-card {
+        width: 200px;
+    }
+    
+    .shop-location {
+        min-width: 220px;
+    }
+    
+    .product-image-container {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ingredient-card {
+        width: 160px;
+    }
+    
+    .shop-location {
+        min-width: 180px;
+    }
+    
+    .product-image-container {
+        height: 180px;
+    }
+} 
